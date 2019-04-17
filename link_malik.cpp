@@ -47,8 +47,13 @@ bool linkedList::removeNode(int pos)
 	}  
 	
 	else { 
-		
-		temp = temp->next->next; 
+		for (int i = 0; temp !=NULL && i<pos-1; i++) 
+	{ 
+		temp= temp->next;
+
+	}
+	       neo=temp->next->next; 
+       		temp->next = neo; 	       
 
 		       	
 	}; 
@@ -131,9 +136,12 @@ void linkedList::print() const
 int main() { 
 
 	linkedList a;
-	a.insertNode(123); 
-	a.insertNode(456); 
-	a.insertNode(789); 
+	a.insertNode(1); 
+	a.insertNode(2); 
+	a.insertNode(3); 
+	a.insertNode(4); 
+	a.insertNode(5); 
+	a.insertNode(6); 
 	a.removeNode(0); 
 	a.print(); 
 
