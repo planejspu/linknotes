@@ -16,10 +16,45 @@ linkedList() ;
 void initializeList(); 
 void destroyList(); 
 bool insertNode(int n); 
+bool removeNode(int pos); 
 bool isEmptyList() const; 
 void print() const; 
 int length() const; 
 } ;
+
+bool linkedList::removeNode(int pos) 
+{ 
+
+	Node *temp = new Node; 
+	Node *neo = new Node; 
+
+	Node *prev= new Node; 
+	Node *curr= new Node; 
+	temp = _head; 
+	neo = _head; 
+	
+	if (_head == NULL) 
+	{ 
+		cout << "Cannot delete from an empty list" << endl ; 
+	} 
+
+	if (pos == 0) 
+	{ 
+		temp=temp->next; 
+		_head = temp; 
+
+			
+	}  
+	
+	else { 
+		
+		temp = temp->next->next; 
+
+		       	
+	}; 
+
+
+};  
 
 bool linkedList::insertNode(int n) 
 { 
@@ -38,9 +73,12 @@ bool linkedList::insertNode(int n)
 		
 	}
 	else { 
-		_tail->next= temp; 
-		_tail= temp; 
+		_tail->next = temp; 
+		_tail=temp; 
+
+		
 	} 	
+
 
 		
 		
@@ -93,9 +131,11 @@ void linkedList::print() const
 int main() { 
 
 	linkedList a;
-	a.print(); 
 	a.insertNode(123); 
-	a.insertNode(444); 
+	a.insertNode(456); 
+	a.insertNode(789); 
+	a.removeNode(0); 
 	a.print(); 
+
 
 } 
